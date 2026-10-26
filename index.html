@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Note for Disha 💗</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fff0f5, #fff8ed, #fce4ec);
+      color: #634452;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 650px;
+      margin: 50px auto;
+      padding: 35px 25px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 25px;
+      box-shadow: 0 10px 35px rgba(180, 90, 120, 0.15);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 18px 0;
+    }
+
+    .pink {
+      color: #c65378;
+      font-style: italic;
+    }
+
+    .heart {
+      font-size: 55px;
+      margin-bottom: 20px;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    .screen {
+      display: none;
+      animation: fadeIn 0.7s ease;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    button {
+      border: none;
+      padding: 14px 25px;
+      margin: 12px 5px;
+      border-radius: 30px;
+      background: #c65378;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #a63d60;
+      transform: translateY(-2px);
+    }
+
+    .secondary {
+      background: #f8e1e9;
+      color: #9e3e5a;
+    }
+
+    .secondary:hover {
+      background: #f1cbd8;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #927783;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      color: #d97898;
+      pointer-events: none;
+      animation: floatUp 9s linear forwards;
+      z-index: -1;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.6;
+      }
+
+      to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 20px auto;
+        padding: 30px 18px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Screen 1 -->
+    <section class="screen active" id="screen1">
+      <div class="heart">💌</div>
+
+      <p>A LITTLE SURPRISE FOR</p>
+
+      <h1>Hey, <span class="pink">Disha</span> 🌷</h1>
+
+      <p>
+        I made a little something for you.
+        Don't worry, there's no big question waiting
+        for you at the end.
+      </p>
+
+      <p>Just a few honest words, from my heart.</p>
+
+      <button onclick="nextScreen(2)">
+        Open your note ✨
+      </button>
+    </section>
+
+    <!-- Screen 2 -->
+    <section class="screen" id="screen2">
+      <div class="heart">🌸</div>
+
+      <h2>It's the little things.</h2>
+
+      <p>
+        Sometimes, someone makes an ordinary day
+        feel a little more special just by being
+        themselves.
+      </p>
+
+      <p>
+        A conversation, a laugh, or a small moment
+        can mean more than we realise.
+      </p>
+
+      <p class="pink">
+        I appreciate those little moments with you.
+      </p>
+
+      <button class="secondary" onclick="nextScreen(1)">
+        ← Back
+      </button>
+
+      <button onclick="nextScreen(3)">
+        One more thing ♡
+      </button>
+    </section>
+
+    <!-- Screen 3 -->
+    <section class="screen" id="screen3">
+      <div class="heart">🫶</div>
+
+      <h2>Trust takes time.</h2>
+
+      <p>
+        I know that trusting someone isn't always easy.
+        Feelings can't be rushed, and nobody should
+        have to pretend to feel something.
+      </p>
+
+      <p>
+        You deserve to feel comfortable being yourself,
+        without pressure or expectations.
+      </p>
+
+      <p class="pink">
+        Your feelings matter too, Disha. 🤍
+      </p>
+
+      <button class="secondary" onclick="nextScreen(2)">
+        ← Back
+      </button>
+
+      <button onclick="nextScreen(4)">
+        The honest part 💗
+      </button>
+    </section>
+
+    <!-- Screen 4 -->
+    <section class="screen" id="screen4">
+      <div class="heart">💗</div>
+
+      <h2>The truth is...</h2>
+
+      <p>
+        Disha, you already know that I like you,
+        but I wanted to express it in my own little way.
+      </p>
+
+      <p>
+        I'm not asking you to feel the same,
+        trust me instantly, or decide anything today.
+      </p>
+
+      <p>
+        I simply wanted to be honest about my feelings
+        while respecting yours just as much.
+      </p>
+
+      <h2 class="pink">No pressure. Truly. ♡</h2>
+
+      <button class="secondary" onclick="nextScreen(3)">
+        ← Back
+      </button>
+
+      <button onclick="nextScreen(5)">
+        One last little note ✨
+      </button>
+    </section>
+
+    <!-- Screen 5 -->
+    <section class="screen" id="screen5">
+      <div class="heart">🤍</div>
+
+      <h2>Take care of your heart.</h2>
+
+      <p>
+        You don't need to reply to this page
+        or give me an answer.
+      </p>
+
+      <p>
+        Whatever you genuinely feel is okay.
+        I hope this little surprise made you smile,
+        even just a little.
+      </p>
+
+      <p class="pink">
+        Thank you for reading, Disha. 🌷
+      </p>
+
+      <button class="secondary" onclick="nextScreen(1)">
+        Read it again ↺
+      </button>
+    </section>
+
+    <div class="footer">
+      Made with care, never with pressure. ♡
+    </div>
+
+  </div>
+    <script>
+    function nextScreen(number) {
+      document.querySelectorAll(".screen").forEach(function(screen) {
+        screen.classList.remove("active");
+      });
+
+      document.getElementById("screen" + number)
+        .classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    // Floating hearts animation
+    function createHeart() {
+      const heart = document.createElement("div");
+
+      heart.className = "floating-heart";
+      heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (15 + Math.random() * 20) + "px";
+      heart.style.animationDuration = (6 + Math.random() * 5) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(function() {
+        heart.remove();
+      }, 11000);
+    }
+
+    setInterval(createHeart, 700);
+  </script>
+
+</body>
